@@ -60,15 +60,8 @@
                                     <constraint firstItem="DdC-Cw-l9l" firstAttribute="centerX" secondItem="OHg-v9-npA" secondAttribute="centerX" id="oCK-sX-xwU"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="jS7-83-xGu">
-                                <rect key="frame" x="0.0" y="50" width="320" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="BvW-Hh-CCX"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="kxa-Ko-Bov">
-                                <rect key="frame" x="0.0" y="90" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="104" width="320" height="464"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OVs-Sd-5gj">
@@ -118,11 +111,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="jS7-83-xGu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BvW-Hh-CCX"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kxa-Ko-Bov" secondAttribute="bottom" id="5W0-m6-u3l"/>
-                            <constraint firstItem="OVs-Sd-5gj" firstAttribute="top" secondItem="jS7-83-xGu" secondAttribute="bottom" constant="20" id="9gT-V7-uXg"/>
+                            <constraint firstItem="OVs-Sd-5gj" firstAttribute="top" secondItem="jS7-83-xGu" secondAttribute="bottom" constant="6" id="9gT-V7-uXg"/>
                             <constraint firstItem="jS7-83-xGu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="E5e-GI-aH5"/>
                             <constraint firstItem="OHg-v9-npA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IDw-kg-05i"/>
                             <constraint firstItem="kxa-Ko-Bov" firstAttribute="top" secondItem="jS7-83-xGu" secondAttribute="bottom" id="Kgz-mo-mg9"/>
@@ -131,16 +131,17 @@
                             <constraint firstAttribute="trailing" secondItem="jS7-83-xGu" secondAttribute="trailing" id="TYH-ZL-a0K"/>
                             <constraint firstItem="kxa-Ko-Bov" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UXU-Us-h42"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OVs-Sd-5gj" secondAttribute="bottom" constant="20" id="Vli-wv-3KY"/>
-                            <constraint firstItem="jS7-83-xGu" firstAttribute="top" secondItem="OHg-v9-npA" secondAttribute="bottom" id="bI9-IE-MQ8"/>
+                            <constraint firstItem="jS7-83-xGu" firstAttribute="top" secondItem="OHg-v9-npA" secondAttribute="bottom" constant="14" id="bI9-IE-MQ8"/>
                             <constraint firstItem="OVs-Sd-5gj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="eqX-fS-flx"/>
                             <constraint firstAttribute="trailing" secondItem="kxa-Ko-Bov" secondAttribute="trailing" id="lFg-OY-DqZ"/>
                             <constraint firstAttribute="trailing" secondItem="OHg-v9-npA" secondAttribute="trailing" id="rqM-Xp-B6w"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dzv-dK-FVh"/>
                     <connections>
                         <outlet property="collection" destination="OVs-Sd-5gj" id="h0I-Qt-Ww1"/>
                         <outlet property="searchBar" destination="jS7-83-xGu" id="c4Q-AG-Do9"/>
-                        <segue destination="MfY-bE-0df" kind="show" identifier="PokemonDetailVC" id="F0Y-ZO-T6l"/>
+                        <segue destination="MfY-bE-0df" kind="show" identifier="PokemonDetailVC" id="ZkS-xD-elh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -155,7 +156,7 @@
                         <viewControllerLayoutGuide type="top" id="CyR-EU-i3P"/>
                         <viewControllerLayoutGuide type="bottom" id="XwI-vG-PBJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ApL-QT-gYb" customClass="PokeCell" customModule="Pokedex" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="ApL-QT-gYb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -415,6 +416,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XwI-vG-PBJ" firstAttribute="top" secondItem="7Mp-K6-Rhb" secondAttribute="bottom" constant="16" id="EI9-Eb-1NH"/>
                             <constraint firstItem="l41-9S-Kui" firstAttribute="leading" secondItem="ApL-QT-gYb" secondAttribute="leading" id="G9C-TU-SPF"/>
                             <constraint firstItem="67o-DK-fz7" firstAttribute="leading" secondItem="ApL-QT-gYb" secondAttribute="leadingMargin" id="KRc-IA-ZIL"/>
                             <constraint firstItem="7Mp-K6-Rhb" firstAttribute="top" secondItem="l41-9S-Kui" secondAttribute="bottom" constant="30" id="Ouo-v9-yq4"/>
@@ -422,7 +424,6 @@
                             <constraint firstAttribute="trailing" secondItem="l41-9S-Kui" secondAttribute="trailing" id="T8Y-es-erD"/>
                             <constraint firstItem="hwi-Ih-V4s" firstAttribute="top" secondItem="ApL-QT-gYb" secondAttribute="top" id="bAC-Nj-oIh"/>
                             <constraint firstItem="67o-DK-fz7" firstAttribute="top" secondItem="hwi-Ih-V4s" secondAttribute="bottom" constant="8" id="jJa-i9-Pgr"/>
-                            <constraint firstItem="XwI-vG-PBJ" firstAttribute="top" secondItem="7Mp-K6-Rhb" secondAttribute="bottom" constant="16" id="kiD-Fs-ahe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="67o-DK-fz7" secondAttribute="trailing" id="orJ-aC-ZoD"/>
                             <constraint firstAttribute="trailing" secondItem="hwi-Ih-V4s" secondAttribute="trailing" id="tJ9-4Q-b18"/>
                             <constraint firstItem="hwi-Ih-V4s" firstAttribute="leading" secondItem="ApL-QT-gYb" secondAttribute="leading" id="xXF-QR-VdT"/>
