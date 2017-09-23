@@ -12,5 +12,5 @@ To Finish:
 - [ ] sgemented control
 
 #### About Pictures
-Pictures and details about pokemons are from [pokeapi](https://pokeapi.co/)
-parsecsv script from [spentak_github](https://github.com/spentak/csvswift)
+- Pictures and details about pokemons are from [pokeapi](https://pokeapi.co/)
+- parsecsv script from [spentak_github](https://github.com/spentak/csvswift)
