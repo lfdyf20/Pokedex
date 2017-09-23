@@ -41,8 +41,33 @@ class PokemonDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        nameLbl.text = pokemon.name.capitalized
+
+        let pokeImage = UIImage(named: "\(pokemon.pokedexId)")
+        mainImg.image = pokeImage
+        currentEvoImg.image = pokeImage
+
+        pokedexLbl.text = "\(pokemon.pokedexId)"
+
+
+        pokemon.downloadPokemonDetail {
+            // be called after download completed
+
+            print("arrive here")
+            self.updateUI()
+        }
+
     }
 
+    func updateUI(){
+
+        attackLbl.text = pokemon.attack
+        defenseLbl.text = pokemon.defense
+        heightLbl.text = pokemon.height
+        weightLbl.text = pokemon.weight
+        typeLbl.text = pokemon.type
+    }
 
 
     @IBAction func backBtnPressed(_ sender: UIButton) {

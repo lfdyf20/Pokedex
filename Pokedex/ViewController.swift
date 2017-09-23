@@ -16,7 +16,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var searchBar: UISearchBar!
     
     var pokemon = [Pokemon]()
-    var pokeToDetail: Pokemon!
     var filteredPokemon = [Pokemon]()
     var musicPlayer: AVAudioPlayer!
     var inSearchMode: Bool = false
@@ -91,7 +90,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
             cell.configureCell(pokemon)
 
-
             return cell
 
         } else {
@@ -103,15 +101,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-//        var poke:Pokemon!
+        var poke:Pokemon!
 
         if inSearchMode {
-            pokeToDetail = filteredPokemon[indexPath.row]
+            poke = filteredPokemon[indexPath.row]
         } else {
-            pokeToDetail = pokemon[indexPath.row]
+            poke = pokemon[indexPath.row]
         }
 
-        performSegue(withIdentifier: "PokemonDetailVC", sender: nil)
+        performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
 
     }
 
