@@ -1,5 +1,5 @@
 # Pokedex
-An App of pokedex
+An App of pokedex, just for fun.
 
 #### Task
 Finished:
@@ -13,3 +13,4 @@ To Finish:
 
 #### About Pictures
 Pictures and details about pokemons are from [pokeapi](https://pokeapi.co/)
+parsecsv script from [spentak_github](https://github.com/spentak/csvswift)
